@@ -14,6 +14,8 @@ spring:
       format_sql: true
     database: postgresql
     show-sql: true
+  profiles:
+    active: mysql
 
 logging:
   level:

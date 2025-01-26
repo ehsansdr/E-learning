@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/FreeCodeCampDataBase
+    username: root
+    password: '!QAZ1qaz' # if you have pass word like this spring detect that as tag not pass so use '' to prevent that
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+      format_sql: true
+    database: mysql
+    show-sql: true
+
+logging:
+  level:
+    root: INFO
