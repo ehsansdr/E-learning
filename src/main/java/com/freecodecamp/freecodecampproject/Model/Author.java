@@ -2,16 +2,23 @@ package com.freecodecamp.freecodecampproject.Model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "AUTHOR_TBL")
 @Data
+@NoArgsConstructor
 public class Author {
 
     @Id
-    @GeneratedValue(
+    @GeneratedValue/*(
             strategy = GenerationType.TABLE,
             generator = "author_id_generator"
-    )
+    )*/
+
     // GenerationType.TABLE
     /*@TableGenerator(name = "author_id_generator", // same as the generator in @GeneratedValue
             table = "id_generator", // the table created by this name
@@ -27,8 +34,28 @@ public class Author {
     )*/
     Integer id;
 
+    @Column(
+            name = "f_name",
+            length = 35)
     String firstName;
+
     String lastName;
+
+    @Column(
+            unique = true,
+            nullable = false)
     String email;
+
     int age;
+
+    @Column(
+            updatable = false,
+            nullable = false
+    )
+    private LocalDateTime createdAt;
+
+    @Column(
+            insertable = false
+    )
+    private LocalDateTime lastModified;
 }
