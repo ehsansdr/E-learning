@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,4 +25,8 @@ public class Section {
     @ManyToOne //(fetch = FetchType.LAZY)
     @JoinColumn(name = "cource_id")
     private Course course;
+
+    // the inverse
+    @OneToMany(mappedBy = "section")
+    private List<Lecture> lecture;
 }
