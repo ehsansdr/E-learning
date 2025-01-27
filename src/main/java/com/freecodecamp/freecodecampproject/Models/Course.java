@@ -37,6 +37,10 @@ public class Course {
     )
     private List<Author> authors;
 
+    // the inverse
+    @OneToMany(mappedBy = "course")
+    private List<Section> sections;
+
 
 
 

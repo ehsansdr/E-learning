@@ -1,8 +1,6 @@
 package com.freecodecamp.freecodecampproject.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,5 +16,11 @@ public class Section {
     @GeneratedValue
     private Integer id;
     private String name;
-    private int order;
+    private int sectionOrder; // of yoy name tis order you will get
+    // exception and you should rename that
+
+    // the owner of the relation
+    @ManyToOne //(fetch = FetchType.LAZY)
+    @JoinColumn(name = "cource_id")
+    private Course course;
 }
