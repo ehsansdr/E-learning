@@ -13,9 +13,9 @@ spring:
     # have this in mysql connecting for not getting : org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to build DatabaseInformation [Unknown table 'SEQUENCES' in information_schema] [n/a]
     properties:
       hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
-    hibernate:
-      ddl-auto: update
-      format_sql: true
+      hibernate:
+        ddl-auto: update
+        format_sql: true
     database: mysql
     show-sql: true
 
