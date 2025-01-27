@@ -1,16 +1,19 @@
-package com.freecodecamp.freecodecampproject.Model;
+package com.freecodecamp.freecodecampproject.Models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "AUTHOR_TBL")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Author {
 
     @Id
