@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-
+import java.util.List;
 
 
 @Data
@@ -52,6 +52,11 @@ public class Author {
     String email;
 
     int age;
+
+    // the inverse of the relationship should have the mappedBy
+    // with exact same name name ot the field in owner class
+    @ManyToMany(mappedBy = "authors")
+    private List<Course> courses;
 
 //    @Column(
 //            updatable = false,
