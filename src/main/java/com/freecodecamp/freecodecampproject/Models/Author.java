@@ -8,12 +8,14 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "AUTHOR_TBL")
+
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Entity
+@Table(name = "AUTHOR_TBL")
 public class Author {
 
     @Id
@@ -51,14 +53,14 @@ public class Author {
 
     int age;
 
-    @Column(
-            updatable = false,
-            nullable = false
-    )
-    private LocalDateTime createdAt;
-
-    @Column(
-            insertable = false
-    )
-    private LocalDateTime lastModified;
+//    @Column(
+//            updatable = false,
+//            nullable = false
+//    )
+//    private LocalDateTime createdAt;
+//
+//    @Column(
+//            insertable = false
+//    )
+//    private LocalDateTime lastModified;
 }
