@@ -56,12 +56,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <version>LATEST</version>
         </dependency>
     </dependencies>
 
@@ -75,6 +70,9 @@
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
+<!--                            it is so neccery to have <version> in here by defualt you do not have that and -->
+<!--                            you will get compile error-->
+                            <version>LATEST</version>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
