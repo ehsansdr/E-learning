@@ -17,6 +17,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @Entity
 @PrimaryKeyJoinColumn(name = "video_id") // with this annotation the id column of the vedoe will raname to the name = ""
+// Foreign key to Resource
 
 // @DiscriminatorValue("V") // only with @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Video extends Resource {

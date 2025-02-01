@@ -18,7 +18,7 @@ public class FreeCodeCampProjectApplication {
         SpringApplication.run(FreeCodeCampProjectApplication.class, args);
     }
 
-    //@Bean
+    // @Bean
     public CommandLineRunner commandLineRunner  (
         AuthorRepository repository,
         VideoRepository videoRepository
@@ -28,8 +28,8 @@ public class FreeCodeCampProjectApplication {
         return args -> {
 
             var video = Video.builder()
-                    .name("abc")
-                    .length(5)
+                    .name("def")
+                    .length(7)
                     // .url("https://www.freecodecamp.com")
                     .build();
             videoRepository.save(video);

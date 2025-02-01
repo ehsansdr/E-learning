@@ -13,11 +13,12 @@ import lombok.experimental.SuperBuilder;
 @Inheritance(strategy = InheritanceType.JOINED) // create the table for extended class
 // and if the data insert to the sub class it will add to the super calls too but the number of column will be the same
 
+/** @Inheritance should be used on subclasses that are entities */
 
 // @Inheritance(strategy = InheritanceType.SINGLE_TABLE) // in this strategy you need DiscriminatorColumn
 // @DiscriminatorColumn(name = "resource_type") // if no : default ine is dtype only with single table
 // have @DiscriminatorValue
-public class Resource {
+public class Resource  extends BaseEntity  {
 
     // you will get dtype in the table and it is good
     // and in the @Inheritance(strategy = InheritanceType.SINGLE_TABLE)

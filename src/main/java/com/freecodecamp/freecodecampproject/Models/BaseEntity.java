@@ -17,8 +17,8 @@ import java.time.LocalDateTime;
 //@Builder  If @Builder is being applied to the BaseEntity class, it will generate a standard builder for BaseEntity. However, the @SuperBuilder annotation in Author is what should be used to ensure that both BaseEntity and Author fields are handled properly.
 @SuperBuilder  // Added this to generate the builder for BaseEntity
 
-@MappedSuperclass
-public class BaseEntity {
+@MappedSuperclass // Base class with common fields, does not create a table
+public class BaseEntity{
 
     // if you use this you do not need to have id in the sub class
     @Id
