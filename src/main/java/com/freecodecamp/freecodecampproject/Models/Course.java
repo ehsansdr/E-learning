@@ -2,23 +2,21 @@ package com.freecodecamp.freecodecampproject.Models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
 //@Table(name = "AUTHOR_TBL")
-public class Course {
-
-    @Id
-    @GeneratedValue
-    private Integer id;
+public class Course extends BaseEntity {
 
     private String name;
     private String description;
@@ -40,9 +38,6 @@ public class Course {
     // the inverse
     @OneToMany(mappedBy = "course")
     private List<Section> sections;
-
-
-
 
 }
 

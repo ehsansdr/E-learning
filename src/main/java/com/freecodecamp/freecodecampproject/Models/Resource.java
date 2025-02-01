@@ -1,21 +1,15 @@
 package com.freecodecamp.freecodecampproject.Models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
-public class Resource {
-
-    @Id
-    @GeneratedValue
-    private Integer id;
+public class Resource extends BaseEntity {
 
     private String name;
     private int size;
