@@ -11,6 +11,8 @@ import lombok.experimental.SuperBuilder;
 //@Builder
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE) //
+@DiscriminatorColumn(name = "resource_type") // if no : default ine is dtype
+// have @DiscriminatorValue
 public class Resource {
 
     // you will get dtype in the table and it is good

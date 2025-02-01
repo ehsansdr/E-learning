@@ -1,7 +1,9 @@
 package com.freecodecamp.freecodecampproject;
 
 import com.freecodecamp.freecodecampproject.Models.Author;
+import com.freecodecamp.freecodecampproject.Models.Video;
 import com.freecodecamp.freecodecampproject.Repositories.AuthorRepository;
+import com.freecodecamp.freecodecampproject.Repositories.VideoRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,13 +18,23 @@ public class FreeCodeCampProjectApplication {
         SpringApplication.run(FreeCodeCampProjectApplication.class, args);
     }
 
-//    @Bean
-//    public CommandLineRunner commandLineRunner  (
-//        AuthorRepository repository
-//    )
-//    {
-//        // when the application start this bean executed
-//        return args -> {
+    //@Bean
+    public CommandLineRunner commandLineRunner  (
+        AuthorRepository repository,
+        VideoRepository videoRepository
+    )
+    {
+        // when the application start this bean executed
+        return args -> {
+
+            var video = Video.builder()
+                    .name("abc")
+                    .length(5)
+                    // .url("https://www.freecodecamp.com")
+                    .build();
+            videoRepository.save(video);
+
+
 //            var author = Author.builder()
 //                    .firstName("alibou")
 //                    .lastName("alibou")
@@ -32,6 +44,6 @@ public class FreeCodeCampProjectApplication {
 //                    .build();
 //
 //            repository.save(author);
-//        };
-//    }
+        };
+    }
 }
