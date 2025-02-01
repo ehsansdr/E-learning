@@ -3,13 +3,21 @@ package com.freecodecamp.freecodecampproject.Models;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-@EqualsAndHashCode(callSuper = true)
+// @EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
+//@Builder
 @Entity
-public class Resource extends BaseEntity {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE) //
+public class Resource {
+
+    // you will get dtype in the table and it is good
+
+    @Id
+    @GeneratedValue
+    private Integer id;
 
     private String name;
     private int size;
