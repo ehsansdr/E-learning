@@ -14,7 +14,8 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @SuperBuilder
 @Entity
-@DiscriminatorValue("T")
+
+//@DiscriminatorValue("T") // only with @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Text extends Resource {
 
     private String content;
