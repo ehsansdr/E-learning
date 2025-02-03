@@ -3,6 +3,9 @@ package com.freecodecamp.freecodecampproject.Models;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+import org.hibernate.annotations.Polymorphism;
+import org.hibernate.annotations.PolymorphismType;
+
 // @EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
@@ -12,6 +15,7 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS) // create the table for extended class
 // and if the data insert to the sub class it will add to the super calls too but the number of column will be the same
+//
 
 /** @Inheritance should be used on subclasses that are entities */
 
